@@ -19,10 +19,7 @@ sudo apt install libopencv-dev python3-opencv
 # Build & Test
 ncnn
 ```
-git clone https://github.com/Tencent/ncnn.git
-cd ncnn
-git submodule update --init
-cd -
+git submodule update --init --recursive
 ```
 
 mnist-ncnn
@@ -31,7 +28,7 @@ mkdir build
 cmake -DNCNN_VULKAN=ON -DNCNN_SYSTEM_GLSLANG=ON ..
 make -j8
 cd src
-./mnist ../../iamge/8.png
+./mnist ../../image/8.png
 ```
 
 # references

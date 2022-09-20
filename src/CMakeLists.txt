@@ -5,7 +5,7 @@ file(GLOB_RECURSE SRC_FILES
 message(${SRC_FILES})
 
 # list(APPEND SRCS ${LAYER_ARCH_SRC})
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O2 -fPIC -std=c++11 -fopenmp")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O2 -fPIC -std=c++11")
 add_library(VisionEngine STATIC ${SRC_FILES})
 
 if(MSVC)
