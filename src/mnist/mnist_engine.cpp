@@ -75,13 +75,13 @@ void MNIST::load_model() {
  * inference
  * @input_image : input image
  */
-ncnn::Mat MNIST::inference(cv::Mat input_image) {
+ncnn::Mat MNIST::inference(sf::Image* input_image) {
     // Init Extractor
     ncnn::Extractor ex = this->_mnist_net->create_extractor();
 
     // Input
-    ncnn::Mat in = ncnn::Mat::from_pixels_resize(input_image.data, 
-            ncnn::Mat::PIXEL_BGR2GRAY, 
+    ncnn::Mat in = ncnn::Mat::from_pixels_resize(input_image->getPixelsPtr(), 
+            ncnn::Mat::PIXEL_RGBA2GRAY, 
             28, 28, 
             28, 28);
     ex.input("flatten_input", in);

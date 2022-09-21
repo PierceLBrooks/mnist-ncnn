@@ -19,7 +19,7 @@
 #ifndef MNIST_H
 #define MNIST_H
 
-#include "opencv2/opencv.hpp"
+#include "SFML/Graphics/Image.hpp"
 #include "net.h"
 
 class MNIST
@@ -31,7 +31,7 @@ public:
     MNIST();
     ~MNIST();
     void load_model();
-    ncnn::Mat inference(cv::Mat input_image);
+    ncnn::Mat inference(sf::Image* input_image);
 };
 
 #endif

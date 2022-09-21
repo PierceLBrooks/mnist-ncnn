@@ -23,7 +23,7 @@
 #include "mnist_engine.hpp"
 
 #include <vector>
-#include <opencv2/opencv.hpp>
+#include "SFML/Graphics/Image.hpp"
 
 class TargetBox
 {
@@ -51,8 +51,6 @@ private:
 public:
     mnist();
     ~mnist();
-
-    int detection(const cv::Mat srcImg, std::vector<TargetBox> &dstBoxes, const float thresh = 0.3);
 };
 #endif
 

@@ -17,9 +17,9 @@
  */
 #include <stdlib.h>
 #include <math.h>
+#include <string>
 #include <algorithm>
 #include "mnist.hpp"
-#include "opencv2/opencv.hpp"
 
 
 int main(int argc, char *argv[])
@@ -37,11 +37,12 @@ int main(int argc, char *argv[])
     mnist.load_model();
     
     // input/output
-    cv::Mat input_image = cv::imread(argv[1]);
+    sf::Image input_image;
     ncnn::Mat output;
+    input_image.loadFromFile(std::string(argv[1]));
 
     // inference
-    output = mnist.inference(input_image);
+    output = mnist.inference(&input_image);
 
     // result
     printf("shape (w, h) = (%d %d) \n", output.w, output.h);

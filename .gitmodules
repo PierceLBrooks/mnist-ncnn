@@ -1,3 +1,6 @@
 [submodule "ncnn"]
 	path = ncnn
 	url = https://github.com/Tencent/ncnn.git
+[submodule "SFML"]
+	path = SFML
+	url = https://github.com/SFML/SFML.git

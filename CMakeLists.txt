@@ -13,7 +13,8 @@ set(CMAKE_PREFIX_PATH
     ${CMAKE_PREFIX_PATH}
     D:/library/protobuf
     )
-find_package(Protobuf REQUIRED)
+find_package(Protobuf)
 
+add_subdirectory(SFML)
 add_subdirectory(ncnn)
 add_subdirectory(src)
